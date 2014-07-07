@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+    <bean id="person" class="edu.vkv.spring.common.Person">
+        <property name="firstName" value="Vladimir"/>
+        <property name="lastName" value="Kravchenko"/>
+        <property name="cars">
+            <list>
+                <bean class="edu.vkv.spring.common.Car">
+                    <property name="trand" value="AUDI"/>
+                </bean>
+                <bean class="edu.vkv.spring.common.Car">
+                    <property name="trand" value="Mersedez"/>
+                </bean>
+                <ref bean="car"/>
+                <ref bean="car"/>
+            </list>
+        </property>
+    </bean>
+    <bean id="car" class="edu.vkv.spring.common.Car">
+        <property name="trand" value="BMV"/>
+    </bean>
+</beans>
